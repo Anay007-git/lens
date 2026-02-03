@@ -1,4 +1,4 @@
-from lark import Lark, Transformer, v_args
+from lark import Lark, Transformer
 import os
 from .ast_nodes import Query
 
@@ -29,7 +29,8 @@ class LensTransformer(Transformer):
         dims = show['dimensions']
         
         for item in items[1:]:
-            if item is None: continue
+            if item is None:
+                continue
             if 'time_expr' in item:
                 time_filter = item['time_expr']
             if 'comparison' in item:

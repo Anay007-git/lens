@@ -1,4 +1,4 @@
-from typing import List
+
 from ..compiler.ast_nodes import Query
 from .registry import MetricRegistry, DimensionRegistry
 

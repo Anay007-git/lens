@@ -16,7 +16,6 @@ class NarrativeGenerator:
         
         # Top/Bottom performers
         if insight.top_performer:
-            dim_display = dimensions[0].replace('_', ' ').title() if dimensions else "Category"
             parts.append(f"Top performer: **{insight.top_performer}**.")
         
         if insight.bottom_performer and insight.bottom_performer != insight.top_performer:

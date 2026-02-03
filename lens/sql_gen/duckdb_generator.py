@@ -1,4 +1,4 @@
-from ..planner.plan_nodes import LogicalNode, Scan, Filter, Aggregate, Project
+from ..planner.plan_nodes import LogicalNode, Scan, Filter, Aggregate
 
 class DuckDBGenerator:
     def generate(self, plan: LogicalNode) -> str:

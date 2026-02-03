@@ -1,1 +1,1 @@
-from .parser import LensParser
+from .parser import LensParser as LensParser

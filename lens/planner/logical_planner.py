@@ -1,9 +1,9 @@
-from typing import List
+
 from ..compiler.ast_nodes import Query
 from ..semantics.registry import MetricRegistry, DimensionRegistry
 from ..time_intelligence.calendar_logic import FiscalCalendar
 from ..time_intelligence.date_parser import DateParser
-from .plan_nodes import LogicalNode, Scan, Filter, Aggregate, Project
+from .plan_nodes import LogicalNode, Scan, Filter, Aggregate
 
 class LogicalPlanner:
     def __init__(self, metrics: MetricRegistry, dimensions: DimensionRegistry, 
@@ -18,10 +18,7 @@ class LogicalPlanner:
         # For now, we assume all metrics/dimensions come from one table.
         # In a real system, we'd look up the table from the Metric definition.
         
-        needed_columns = [] 
-        # We need the columns underlying the dimensions and metrics.
-        # For MVP, resolving to SQL expressions directly in Agg/Group is fine, 
-        # but Scan should ideally know what to fetch if we weren't just generating SQL string.
+        # For MVP, resolving to SQL expressions directly in Agg/Group is fine.
         
         scan_node = Scan(table_name=self.default_table, columns=["*"]) 
         current_node = scan_node
