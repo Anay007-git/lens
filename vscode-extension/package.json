@@ -1,0 +1,52 @@
+{
+    "name": "lens-language",
+    "displayName": "LENS Language",
+    "description": "Syntax highlighting and run support for LENS analytics language",
+    "version": "0.1.0",
+    "publisher": "lens-lang",
+    "engines": {
+        "vscode": "^1.75.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "lens",
+                "aliases": [
+                    "LENS",
+                    "lens"
+                ],
+                "extensions": [
+                    ".lens"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "lens",
+                "scopeName": "source.lens",
+                "path": "./syntaxes/lens.tmLanguage.json"
+            }
+        ],
+        "commands": [
+            {
+                "command": "lens.runQuery",
+                "title": "LENS: Run Query"
+            }
+        ],
+        "keybindings": [
+            {
+                "command": "lens.runQuery",
+                "key": "ctrl+enter",
+                "when": "editorLangId == lens"
+            }
+        ]
+    },
+    "activationEvents": [
+        "onLanguage:lens"
+    ],
+    "main": "./extension.js"
+}

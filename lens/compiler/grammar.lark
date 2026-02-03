@@ -1,0 +1,21 @@
+start: query
+
+query: show_clause [for_clause] [compare_clause]
+
+show_clause: "show" metric (by_clause)*
+by_clause: "by" dimension
+
+for_clause: "for" time_expr
+
+compare_clause: "compare" "with" compare_type
+
+metric: NAME
+dimension: NAME
+time_expr: NAME
+compare_type: "previous" "year" -> prev_year
+            | "previous" "month" -> prev_month
+            | "previous" "period" -> prev_period
+
+NAME: /[a-zA-Z_][a-zA-Z0-9_]*/
+%import common.WS
+%ignore WS

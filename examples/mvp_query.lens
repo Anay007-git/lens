@@ -1,0 +1,4 @@
+# Example LENS Query
+show net_sales by region
+for FY2025
+compare with previous year

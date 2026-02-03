@@ -1,0 +1,50 @@
+{
+    "scopeName": "source.lens",
+    "patterns": [
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#strings"
+        },
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#identifiers"
+        }
+    ],
+    "repository": {
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.lens",
+                    "match": "\\b(show|by|for|compare|with|previous|year|month|period)\\b"
+                },
+                {
+                    "name": "keyword.other.lens",
+                    "match": "\\b(FY\\d{4}|YTD|MTD|QTD)\\b"
+                }
+            ]
+        },
+        "strings": {
+            "name": "string.quoted.double.lens",
+            "begin": "\"",
+            "end": "\"",
+            "patterns": [
+                {
+                    "name": "constant.character.escape.lens",
+                    "match": "\\\\."
+                }
+            ]
+        },
+        "comments": {
+            "name": "comment.line.number-sign.lens",
+            "match": "#.*$"
+        },
+        "identifiers": {
+            "name": "variable.other.lens",
+            "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+        }
+    }
+}
