@@ -66,7 +66,7 @@ sample_data = setup_sample_data(components)
 
 # --- UI ---
 st.sidebar.header("📊 Data Preview")
-st.sidebar.dataframe(sample_data, use_container_width=True)
+st.sidebar.dataframe(sample_data, width='stretch')
 
 st.header("Write your query")
 query_text = st.text_area(
@@ -113,7 +113,7 @@ if st.button("▶️ Run Query", type="primary"):
             st.markdown(story)
         
         st.subheader("📊 Data")
-        st.dataframe(result.dataframe, use_container_width=True)
+        st.dataframe(result.dataframe, width='stretch')
         
     except SemanticError as e:
         st.error(f"Semantic Error: {e}")
